@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import home_view
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from articles.views import (
     article_search_view,
     article_create_view,
@@ -34,3 +35,4 @@ urlpatterns = [
     path('logout/', logout_view),
     path('register/',register_view)
 ]
+urlpatterns+=staticfiles_urlpatterns()
