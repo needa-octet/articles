@@ -81,13 +81,13 @@ WSGI_APPLICATION = 'd1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-# DATABASES["default"]=dj_database_url.parse("postgresql://articles_django_user:tnoSkVWmvflW95eKEfcKphiDhySqwfSj@dpg-cr3e7iaj1k6c73dl1gc0-a.oregon-postgres.render.com/articles_django")
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+DATABASES["default"]=dj_database_url.parse("postgresql://articles_django_user:tnoSkVWmvflW95eKEfcKphiDhySqwfSj@dpg-cr3e7iaj1k6c73dl1gc0-a.oregon-postgres.render.com/articles_django")
 # postgresql://articles_django_user:tnoSkVWmvflW95eKEfcKphiDhySqwfSj@dpg-cr3e7iaj1k6c73dl1gc0-a.oregon-postgres.render.com/articles_django
 POSTGRES_DB = os.environ.get("POSTGRES_DB")
 POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
