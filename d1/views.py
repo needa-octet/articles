@@ -5,9 +5,10 @@ import random
 from articles.models import Article 
 from django.http import HttpResponse
 from django.template.loader import render_to_string,get_template
+from django.shortcuts import get_object_or_404
 name ="hy"
 num=random.randint(1,4)
-article_obj=Article.objects.get(id=2)
+article_obj=get_object_or_404(Article, id=2)
 article_title=article_obj.title
 article_list=Article.objects.all()
 my_list=[1,3,45,4536,1]
