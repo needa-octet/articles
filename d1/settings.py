@@ -89,31 +89,31 @@ DATABASES = {
 }
 DATABASES["default"]=dj_database_url.parse("postgresql://articles_django_user:tnoSkVWmvflW95eKEfcKphiDhySqwfSj@dpg-cr3e7iaj1k6c73dl1gc0-a.oregon-postgres.render.com/articles_django")
 # postgresql://articles_django_user:tnoSkVWmvflW95eKEfcKphiDhySqwfSj@dpg-cr3e7iaj1k6c73dl1gc0-a.oregon-postgres.render.com/articles_django
-POSTGRES_DB = os.environ.get("POSTGRES_DB")
-POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
-POSTGRES_USER = os.environ.get("POSTGRES_USER")
-POSTGRES_HOST = os.environ.get("POSTGRES_HOST")
-POSTGRES_PORT = os.environ.get("POSTGRES_PORT")
+# POSTGRES_DB = os.environ.get("POSTGRES_DB")
+# POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
+# POSTGRES_USER = os.environ.get("POSTGRES_USER")
+# POSTGRES_HOST = os.environ.get("POSTGRES_HOST")
+# POSTGRES_PORT = os.environ.get("POSTGRES_PORT")
 
-POSTGRES_READY = (
-    POSTGRES_DB is not None
-    and POSTGRES_PASSWORD is not None
-    and POSTGRES_USER is not None
-    and POSTGRES_HOST is not None
-    and POSTGRES_PORT is not None
-)
+# POSTGRES_READY = (
+#     POSTGRES_DB is not None
+#     and POSTGRES_PASSWORD is not None
+#     and POSTGRES_USER is not None
+#     and POSTGRES_HOST is not None
+#     and POSTGRES_PORT is not None
+# )
 
-if POSTGRES_READY:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": POSTGRES_DB,
-            "USER": POSTGRES_USER,
-            "PASSWORD": POSTGRES_PASSWORD,
-            "HOST": POSTGRES_HOST,
-            "PORT": POSTGRES_PORT,
-        }
-    }
+# if POSTGRES_READY:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.postgresql",
+#             "NAME": POSTGRES_DB,
+#             "USER": POSTGRES_USER,
+#             "PASSWORD": POSTGRES_PASSWORD,
+#             "HOST": POSTGRES_HOST,
+#             "PORT": POSTGRES_PORT,
+#         }
+#     }
     
     
 # Password validation
