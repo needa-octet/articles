@@ -1,0 +1,14 @@
+{%  extends "base.html" %} 
+{% block content%}
+<h1>Hello -{{title}}- {content}</h1>
+<ul>
+    {%for x in my_list_str%}
+        {% if x.title%}
+            <li>
+                <a href="/articles/{{x.id}}">
+                    {{x.title}}-{{x.content}}-{{x.id}}
+                </a></li>
+        {% endif%}
+    {%endfor%}
+</ul>
+{%endblock content%}
