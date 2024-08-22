@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home_view
+from d1.views import (home_view)
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from articles.views import (
     article_search_view,
