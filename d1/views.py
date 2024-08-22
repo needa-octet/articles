@@ -5,7 +5,7 @@ import random
 from articles.models import Article 
 from django.http import HttpResponse
 from django.template.loader import render_to_string,get_template
-from django.shortcuts import get_object_or_404,render
+from django.shortcuts import get_object_or_404
 name ="hy"
 num=random.randint(1,4)
 
@@ -22,14 +22,15 @@ for x in my_list:
 # templ=get_template("home-view.html")
 # templ_str=templ.render(context=context)
 
-def home_view(request,id=None,*args, **kwargs):
-    article_obj=get_object_or_404(Article, id=2)
-
+def home_view(_request,id=None,*args, **kwargs):
+    # article_obj=get_object_or_404(Article, id=2)
+    # article_title=article_obj.title
+    article_obj=Article.objects.get(id=2)
     context={
         "title":article_obj.title,
         "content":article_obj.content,
         "my_list_str":article_list
     }
-    # HTML_STRING=render_to_string("home-view.html",context=context)
+    HTML_STRING=render_to_string("home-view.html",context=context)
     # print("id of Article",id)
-    return render(request,"home-view.html", context=context)
+    return HttpResponse(HTML_STRING)
