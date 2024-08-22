@@ -87,7 +87,9 @@ WSGI_APPLICATION = 'd1.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES={"default":dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+DATABASES={
+   "default": dj_database_url.parse('postgresql://articles_ywsv_user:3En5yPxut3tf549FAAQEGzgS894fZ7sp@dpg-cr3hdhjv2p9s73dtaeo0-a.oregon-postgres.render.com/articles_ywsv')
+}
 # postgresql://articles_django_user:tnoSkVWmvflW95eKEfcKphiDhySqwfSj@dpg-cr3e7iaj1k6c73dl1gc0-a.oregon-postgres.render.com/articles_django
 # POSTGRES_DB = os.environ.get("POSTGRES_DB")
 # POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
