@@ -21,7 +21,6 @@ for x in my_list:
 # """.format(**context)
 # templ=get_template("home-view.html")
 # templ_str=templ.render(context=context)
-HTML_STRING=render_to_string("home-view.html",context=context)
 
 def home_view(_request,id=None,*args, **kwargs):
     article_obj=get_object_or_404(Article, id=2)
@@ -31,5 +30,6 @@ def home_view(_request,id=None,*args, **kwargs):
     "content":article_obj.content,
     "my_list_str":article_list
 }
+    HTML_STRING=render_to_string("home-view.html",context=context)
     # print("id of Article",id)
     return HttpResponse(HTML_STRING)
