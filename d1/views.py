@@ -29,7 +29,7 @@ def home_view(_request,id=None,*args, **kwargs):
     context={
         "title":article_obj.title,
         "content":article_obj.content,
-        "my_list_str":Article.objects.all()_list
+        "my_list_str":Article.objects.all()
     }
     # context={
     #     "title":article_obj.title,
