@@ -10,10 +10,10 @@ name ="hy"
 num=random.randint(1,4)
 
 article_list=Article.objects.all()
-my_list=[1,3,45,4536,1]
-my_list_str=""
-for x in my_list:
-    my_list_str+=f"<li>number is: {x}\n</li>"
+# my_list=[1,3,45,4536,1]
+# my_list_str=""
+# for x in my_list:
+#     my_list_str+=f"<li>number is: {x}\n</li>"
 
 # HTML_STRING= """
 
@@ -23,13 +23,13 @@ for x in my_list:
 # templ_str=templ.render(context=context)
 
 def home_view(_request,id=None,*args, **kwargs):
-    article_obj=get_object_or_404(Article, id=2)
+    # article_obj=get_object_or_404(Article, id=2)
     article_title=article_obj.title
-    # article_obj=Article.objects.get(id=2)
+    article_obj=Article.objects.get(id=2)
     context={
         "title":article_obj.title,
         "content":article_obj.content,
-        "my_list_str":article_list
+        "my_list_str":Article.objects.all()_list
     }
     # context={
     #     "title":article_obj.title,
