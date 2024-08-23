@@ -24,8 +24,9 @@ article_list=Article.objects.all()
 
 def home_view(_request,id=None,*args, **kwargs):
     # article_obj=get_object_or_404(Article, id=2)
-    article_title=article_obj.title
     article_obj=Article.objects.get(id=2)
+    article_title=article_obj.title
+    
     context={
         "title":article_obj.title,
         "content":article_obj.content,
