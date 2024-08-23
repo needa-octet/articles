@@ -9,7 +9,7 @@ from django.shortcuts import get_object_or_404
 name ="hy"
 num=random.randint(1,4)
 
-article_list=Article.objects.all()
+# article_list=Article.objects.all()
 # my_list=[1,3,45,4536,1]
 # my_list_str=""
 # for x in my_list:
@@ -26,7 +26,7 @@ def home_view(_request,id=None,*args, **kwargs):
     article_obj=get_object_or_404(Article, id=2)
     # article_obj=Article.objects.get(id=2)
     # article_title=article_obj.title
-    
+    article_list=Article.objects.all()
     # context={
     #     "title":article_obj.title,
     #     "content":article_obj.content,
