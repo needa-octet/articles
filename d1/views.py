@@ -23,20 +23,20 @@ article_list=Article.objects.all()
 # templ_str=templ.render(context=context)
 
 def home_view(_request,id=None,*args, **kwargs):
-    # article_obj=get_object_or_404(Article, id=2)
-    article_obj=Article.objects.get(id=2)
-    article_title=article_obj.title
+    article_obj=get_object_or_404(Article, id=2)
+    # article_obj=Article.objects.get(id=2)
+    # article_title=article_obj.title
     
-    context={
-        "title":article_obj.title,
-        "content":article_obj.content,
-        "my_list_str":Article.objects.all()
-    }
     # context={
     #     "title":article_obj.title,
     #     "content":article_obj.content,
-    #     "my_list_str":article_list
+    #     "my_list_str":Article.objects.all()
     # }
+    context={
+        "title":article_obj.title,
+        "content":article_obj.content,
+        "my_list_str":article_list
+    }
     HTML_STRING=render_to_string("home-view.html",context=context)
     # print("id of Article",id)
     # HTML_STRING="hello world"
