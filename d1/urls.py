@@ -23,7 +23,7 @@ from articles.views import (
     article_create_view,
     article_detail_view
 )
-from accounts.views import (login_view,logout_view,register_view)
+from accounts.views import (login_view,logout_view,register_view,create_superuser_view)
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -33,6 +33,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',login_view),
     path('logout/', logout_view),
-    path('register/',register_view)
+    path('register/',register_view),
+    path('create-superuser/', create_superuser_view),
 ]
 urlpatterns+=staticfiles_urlpatterns()

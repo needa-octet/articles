@@ -41,3 +41,12 @@ def register_view(request):
         return redirect('/login')
     context={"form":form}
     return render(request,"accounts/register.html",context=context)
+# In views.py of one of your apps
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+
+def create_superuser_view(request):
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser('admin', 'needa@octet.com', 'Needa#710')
+        return HttpResponse('Superuser created.')
+    return HttpResponse('Superuser already exists.')
